@@ -26,6 +26,12 @@ dependencies {
 
   testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
   testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+  compileOnly('jakarta.platform:jakarta.jakartaee-web-api:10.0.0')
+
+  //for access DB
+  //compileOnly('jakarta.platform:jakarta.jakartaee-web-api:10.0.0')
+  implementation 'org.mariadb.jdbc:mariadb-java-client:3.2.0'
+  implementation 'org.eclipse.persistence:org.eclipse.persistence.jpa:4.0.2'
 }
 
 test {
