@@ -1,4 +1,4 @@
-package vn.edu.iuh.fit.labsweek02www.entities;
+package vn.edu.iuh.fit.labsweek02www.backend.entities;
 
 import jakarta.persistence.*;
 
@@ -6,6 +6,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "customer")
+@NamedQueries(@NamedQuery(name="Customer.findAll",query = "select c from Customer c"))
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,13 +24,12 @@ public class Customer {
     @OneToMany(mappedBy = "customer")
     private List<Order> lsOrder;
 
-    public Customer(long id, String custName, String email, String phone, String address, List<Order> lsOrder) {
+    public Customer(String custName, String email, String phone, String address) {
         this.id = id;
         this.custName = custName;
         this.email = email;
         this.phone = phone;
         this.address = address;
-        this.lsOrder = lsOrder;
     }
 
     public Customer() {

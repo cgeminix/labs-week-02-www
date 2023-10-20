@@ -1,4 +1,4 @@
-package vn.edu.iuh.fit.labsweek02www.entities;
+package vn.edu.iuh.fit.labsweek02www.backend.entities;
 
 import jakarta.persistence.*;
 

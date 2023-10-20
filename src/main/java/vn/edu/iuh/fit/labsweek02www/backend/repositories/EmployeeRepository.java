@@ -1,10 +1,10 @@
-package vn.edu.iuh.fit.labsweek02www.repositories;
+package vn.edu.iuh.fit.labsweek02www.backend.repositories;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Persistence;
 import jakarta.persistence.TypedQuery;
-import vn.edu.iuh.fit.labsweek02www.entities.Employee;
-import vn.edu.iuh.fit.labsweek02www.enums.EmployeeStatus;
+import vn.edu.iuh.fit.labsweek02www.backend.entities.Employee;
+import vn.edu.iuh.fit.labsweek02www.backend.enums.EmployeeStatus;
 
 import java.util.List;
 import java.util.Optional;

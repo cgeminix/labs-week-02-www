@@ -1,8 +1,8 @@
-package vn.edu.iuh.fit.labsweek02www.services;
+package vn.edu.iuh.fit.labsweek02www.backend.services;
 
-import vn.edu.iuh.fit.labsweek02www.entities.Employee;
-import vn.edu.iuh.fit.labsweek02www.enums.EmployeeStatus;
-import vn.edu.iuh.fit.labsweek02www.repositories.EmployeeRepository;
+import vn.edu.iuh.fit.labsweek02www.backend.entities.Employee;
+import vn.edu.iuh.fit.labsweek02www.backend.enums.EmployeeStatus;
+import vn.edu.iuh.fit.labsweek02www.backend.repositories.EmployeeRepository;
 
 import java.util.List;
 import java.util.Optional;

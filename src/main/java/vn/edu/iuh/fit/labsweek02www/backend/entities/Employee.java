@@ -1,7 +1,7 @@
-package vn.edu.iuh.fit.labsweek02www.entities;
+package vn.edu.iuh.fit.labsweek02www.backend.entities;
 
 import jakarta.persistence.*;
-import vn.edu.iuh.fit.labsweek02www.enums.EmployeeStatus;
+import vn.edu.iuh.fit.labsweek02www.backend.enums.EmployeeStatus;
 
 import java.time.LocalDateTime;
 import java.util.List;

@@ -1,4 +1,4 @@
-package vn.edu.iuh.fit.labsweek02www.enums;
+package vn.edu.iuh.fit.labsweek02www.backend.enums;
 
 public enum ProductStatus {
     ACTIVE(1),

@@ -1,7 +1,7 @@
-package vn.edu.iuh.fit.labsweek02www.entities;
+package vn.edu.iuh.fit.labsweek02www.backend.entities;
 
 import jakarta.persistence.*;
-import vn.edu.iuh.fit.labsweek02www.enums.ProductStatus;
+import vn.edu.iuh.fit.labsweek02www.backend.enums.ProductStatus;
 
 import java.util.ArrayList;
 import java.util.List;
