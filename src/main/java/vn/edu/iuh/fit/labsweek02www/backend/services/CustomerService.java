@@ -14,6 +14,9 @@ public class CustomerService {
     public void insertCust(Customer cust){
         rep.insertCustomer(cust);
     }
+    public void deleteCust(long cust_id){
+        rep.deleteCustomer(cust_id);
+    }
 
     public List<Customer> getAll(){
         return rep.getAllCust();

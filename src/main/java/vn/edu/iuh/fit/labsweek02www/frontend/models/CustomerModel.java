@@ -18,4 +18,9 @@ public class CustomerModel {
         service.insertCust(cust);
         resp.sendRedirect("Customers.jsp");
     }
+    public void deleteCust(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+            long id = Long.parseLong(req.getParameter("id"));
+        service.deleteCust(id);
+        resp.sendRedirect("Customers.jsp");
+    }
 }

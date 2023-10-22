@@ -24,6 +24,15 @@ public class CustomerRepository {
             trans.rollback();
         }
     }
+    public void deleteCustomer(long cust_id){
+        try {
+            trans.begin();
+            em.remove(em.find(Customer.class,cust_id));
+            trans.commit();
+        }catch (Exception ex){
+            trans.rollback();
+        }
+    }
     public List<Customer> getAllCust(){
         return em.createNamedQuery("Customer.findAll", Customer.class).getResultList();
     }

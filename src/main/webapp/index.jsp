@@ -9,6 +9,8 @@
     <%
         CustomerRepository customerRepository = new CustomerRepository();
     %>
-    <a href="">List Customer</a>
+    <a href="Customers.jsp">List Customer</a>
+    <br>
+    <a href="Employee.jsp">List Employee</a>
 </body>
 </html>

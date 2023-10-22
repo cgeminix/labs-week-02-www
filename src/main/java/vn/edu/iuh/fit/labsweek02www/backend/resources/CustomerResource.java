@@ -22,4 +22,11 @@ public class CustomerResource {
         List<Customer> list = service.getAll();
         return Response.ok(list).build();
     }
+    @GET
+    @Consumes("application/json")
+    @Produces("application/json")
+    public Response delete(long id){
+        service.deleteCust(id);
+        return Response.ok(id).build();
+    }
 }

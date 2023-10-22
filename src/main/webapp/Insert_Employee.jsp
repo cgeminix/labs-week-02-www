@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
-  User: To Nga
-  Date: 10/20/2023
-  Time: 2:37 PM
+  User: Student
+  Date: 10/22/2023
+  Time: 7:43 AM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -18,23 +18,27 @@
 
 <html>
 <head>
-    <title>Insert Customer</title>
+    <title>Insert Employee</title>
 </head>
 <body>
 <div class="container">
-    <h2>Insert Customer</h2>
-    <form action="controls?action=insert_Cust" method="post">
+    <h2>Insert Employee</h2>
+    <form action="controls?action=insert_Emp" method="post">
         <div class="form-group">
             <label for="name">Name:</label>
             <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name">
         </div>
         <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" class="form-control" id="email" placeholder="Enter Email" name="email">
+            <label for="dob">Date of birth:</label>
+            <input type="text" class="form-control" id="dob" placeholder="Enter Dob" name="dob">
         </div>
         <div class="form-group">
             <label for="phone">Phone:</label>
             <input type="text" class="form-control" id="phone" placeholder="Enter Phone" name="phone">
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter Email" name="email">
         </div>
         <div class="form-group">
             <label for="address">Address:</label>

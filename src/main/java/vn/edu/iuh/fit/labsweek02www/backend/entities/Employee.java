@@ -3,7 +3,7 @@ package vn.edu.iuh.fit.labsweek02www.backend.entities;
 import jakarta.persistence.*;
 import vn.edu.iuh.fit.labsweek02www.backend.enums.EmployeeStatus;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Objects;
 
@@ -17,7 +17,7 @@ public class Employee {
     @Column(name = "full_name", length = 150, nullable = false)
     private String fullname;
     @Column(name = "dob", nullable = false)
-    private LocalDateTime dob;
+    private LocalDate dob;
     @Column(name = "email", unique = true, length = 150)
     private  String email;
     @Column(name = "phone", length = 150, nullable = false)
@@ -46,11 +46,11 @@ public class Employee {
         this.fullname = fullname;
     }
 
-    public LocalDateTime getDob() {
+    public LocalDate getDob() {
         return dob;
     }
 
-    public void setDob(LocalDateTime dob) {
+    public void setDob(LocalDate dob) {
         this.dob = dob;
     }
 
@@ -97,15 +97,13 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee(long id, String fullname, LocalDateTime dob, String email, String phone, String address, EmployeeStatus status, List<Order> lsOrder) {
-        this.id = id;
+    public Employee(String fullname, LocalDate dob, String email, String phone, String address, EmployeeStatus status) {
         this.fullname = fullname;
         this.dob = dob;
         this.email = email;
         this.phone = phone;
         this.address = address;
         this.status = status;
-        this.lsOrder = lsOrder;
     }
 
     @Override

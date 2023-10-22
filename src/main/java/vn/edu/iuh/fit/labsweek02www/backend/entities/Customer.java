@@ -25,7 +25,6 @@ public class Customer {
     private List<Order> lsOrder;
 
     public Customer(String custName, String email, String phone, String address) {
-        this.id = id;
         this.custName = custName;
         this.email = email;
         this.phone = phone;

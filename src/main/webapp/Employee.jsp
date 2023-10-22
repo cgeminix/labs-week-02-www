@@ -1,12 +1,12 @@
 <%--
   Created by IntelliJ IDEA.
-  User: To Nga
-  Date: 10/20/2023
-  Time: 2:30 PM
+  User: Student
+  Date: 10/22/2023
+  Time: 7:19 AM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page import="vn.edu.iuh.fit.labsweek02www.backend.services.CustomerService" %>
-<%@ page import="vn.edu.iuh.fit.labsweek02www.backend.entities.Customer" %>
+<%@ page import="vn.edu.iuh.fit.labsweek02www.backend.services.EmployeeServices" %>
+<%@ page import="vn.edu.iuh.fit.labsweek02www.backend.entities.Employee" %>
 <%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
@@ -25,8 +25,8 @@
 </head>
 <body>
 <%
-    CustomerService service = new CustomerService();
-    List<Customer> lsCust =  service.getAll();
+    EmployeeServices services = new EmployeeServices();
+    List<Employee> lsEmployee =  services.getAll();
 %>
 <div class="container">
     <h2>Customers</h2>
@@ -35,27 +35,30 @@
         <tr>
             <th>Id</th>
             <th>Name</th>
+            <th>Dob</th>
             <th>Email</th>
             <th>Phone</th>
             <th>Address</th>
-            <th><a href="Insert_Customer.jsp">Insert customer</a></th>
+            <th>Status</th>
+            <th><a href="Insert_Employee.jsp">Insert customer</a></th>
 
         </tr>
         </thead>
         <tbody>
         <%
-            for (Customer cus : lsCust){
-                long id = cus.getId();
-                String delete_String = "/controls?action=deleteCust&id="+id;
+            for (Employee employee : lsEmployee){
+                long id = employee.getId();
         %>
         <tr>
             <td><%=id%></td>
-            <td><%=cus.getCustName()%></td>
-            <td><%=cus.getEmail()%></td>
-            <td><%=cus.getPhone()%></td>
-            <td><%=cus.getAddress()%></td>
+            <td><%=employee.getFullname()%></td>
+            <td><%=employee.getDob()%></td>
+            <td><%=employee.getPhone()%></td>
+            <td><%=employee.getEmail()%></td>
+            <td><%=employee.getAddress()%></td>
+            <td><%=employee.getStatus()%></td>
             <th><a href="">update</a></th>
-            <th><a href=<%=delete_String%>>delete</a></th>
+            <th><a href="">delete</a></th>
 
         </tr>
         <%}%>

@@ -1,8 +1,6 @@
 package vn.edu.iuh.fit.labsweek02www.backend.repositories;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.Persistence;
-import jakarta.persistence.TypedQuery;
+import jakarta.persistence.*;
 import vn.edu.iuh.fit.labsweek02www.backend.entities.Employee;
 import vn.edu.iuh.fit.labsweek02www.backend.enums.EmployeeStatus;
 
@@ -11,11 +9,19 @@ import java.util.Optional;
 
 public class EmployeeRepository {
     private EntityManager em;
+    private EntityTransaction trans;
     public EmployeeRepository(){
         em = Persistence.createEntityManagerFactory("labs-week-02-www").createEntityManager();
+        trans = em.getTransaction();
     }
     public void insertEmp(Employee employee){
-        em.persist(employee);
+        try {
+            trans.begin();
+            em.persist(employee);
+            trans.commit();
+        }catch (Exception e){
+            trans.rollback();
+        }
     }
 
     public void setStatus(Employee employee, EmployeeStatus status) {
@@ -27,7 +33,8 @@ public class EmployeeRepository {
     }
 
     public List<Employee> getAllEmp(){
-        return em.createQuery("select e from Employee e where e.status=1", Employee.class).getResultList();
+        return em.createQuery("select e from Employee e ", Employee.class)
+                .getResultList();
     }
 
     public Optional<Employee> findById(long id){
